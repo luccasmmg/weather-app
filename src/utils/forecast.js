@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
     } else if (body.error) {
       callback('Error in input', undefined);
     } else {
-      callback(undefined, `${body.daily.data[0].summary} É atualmente ${body.currently.temperature} graus. Com uma chance de chuva de ${body.currently.precipProbability}%`);
+      callback(undefined, `${body.daily.data[0].summary} É atualmente ${body.currently.temperature} graus. Com uma chance de chuva de ${body.currently.precipProbability}%, a temperature máxima é de ${body.daily.data[0].temperatureHigh} e mínima de ${body.daily.data[0].temperatureLow}`);
     }
   });
 }
